@@ -1020,7 +1020,8 @@ newwindow(Client *c, const Arg *a, int noembed)
 		cmd[i++] = stylefile;
 	}
 	cmd[i++] = curconfig[DiskCache].val.i ? "-D" : "-d";
-	if (embed && !noembed) {
+	/* if (embed && !noembed) { */
+	if (embed) {
 		cmd[i++] = "-e";
 		snprintf(tmp, LENGTH(tmp), "%lu", embed);
 		cmd[i++] = tmp;
